@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 16:17:02 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/25 02:00:54 by mhenriqu         ###   ########.fr       */
+/*   Created: 2022/05/09 10:17:22 by mhenriqu          #+#    #+#             */
+/*   Updated: 2022/05/25 01:33:42 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int a, size_t n)
+int	ft_isalpha(int c)
 {
-	size_t			i;
-	unsigned char	*b;
-
-	i = 0;
-	b = (unsigned char *)str;
-	while (i < n)
-		b[i++] = (unsigned char) a;
-	return (str);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 16:17:02 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/25 02:00:54 by mhenriqu         ###   ########.fr       */
+/*   Created: 2022/05/25 03:08:39 by mhenriqu          #+#    #+#             */
+/*   Updated: 2022/05/25 03:21:14 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int a, size_t n)
+void	*ft_memmove(void *str1, const void *str2, size_t n)
 {
-	size_t			i;
-	unsigned char	*b;
-
-	i = 0;
-	b = (unsigned char *)str;
-	while (i < n)
-		b[i++] = (unsigned char) a;
-	return (str);
+	if (str1 == NULL && str2 == NULL)
+		return (NULL);
+	if (str1 < str2)
+		ft_memcpy(str1, str2, n);
+	else
+		while (n--)
+			*(unsigned char *)(str1 + n) = *(unsigned char *)(str2 + n);
+	return (str1);
 }

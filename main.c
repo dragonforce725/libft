@@ -2,16 +2,14 @@
 
 int main (void)
 {
-	int val;
-   char str[20];
+	char    *s1 = "MZIRIBMZIRIBMZE123";
+    char    *s2 = "MZIRIBMZE";
+    size_t  max = strlen(s2);
 
-   strcpy(str, "98993489");
-   val = atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
+    char    *i1 = strnstr(s1, s2, max);
+    char    *i2 = ft_strnstr(s1, s2, max);
 
-   strcpy(str, "tutorialspoint.com");
-   val = atoi(str);
-   printf("String value = %s, Int value = %d\n", str, val);
 
-   return(0);
+    printf("strnstr: %s\nft_strnstr: %s\n", i1,i2);
+    return 0;
 }

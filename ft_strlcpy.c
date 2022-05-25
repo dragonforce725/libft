@@ -6,7 +6,7 @@
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 16:27:04 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/12 17:35:12 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/05/25 02:03:00 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t int	count;
-	size_t int	i;
+	size_t	count;
+	size_t	i;
 
 	count = 0;
 	i = 0;
