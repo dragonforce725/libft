@@ -6,7 +6,7 @@
 #    By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 19:07:40 by mhenriqu          #+#    #+#              #
-#    Updated: 2022/05/25 06:37:28 by mhenriqu         ###   ########.fr        #
+#    Updated: 2022/05/31 07:13:19 by mhenriqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,9 @@ SRCS	=  ft_isalnum.c\
 		ft_putstr_fd.c\
 		ft_putnbr_fd.c\
 		ft_putchar_fd.c\
+		ft_putendl_fd.c\
+		ft_substr.c\
+		ft_itoa.c\
 
 FLAGS   = -Wall -Wextra -Werror 
 
@@ -46,7 +49,7 @@ NAME	= libft.a
 OBJ = $(SRCS:.c=.o)
 
 $(NAME):	$(OBJ)
-	@ar r $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 	@echo "feito !"
 
 all:	$(NAME)
@@ -58,3 +61,6 @@ fclean:	clean
 	rm -f $(name)
 
 re: fclean all
+
+.PHONY:
+	all clean fclean re

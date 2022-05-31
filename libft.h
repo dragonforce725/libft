@@ -6,7 +6,7 @@
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:50:49 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/25 06:42:24 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/05/31 08:07:58 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strdup(const char *s1);
+void    ft_putendl_fd(char *s, int fd);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_itoa(int n);
+
 #endif
