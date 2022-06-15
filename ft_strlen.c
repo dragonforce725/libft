@@ -6,18 +6,21 @@
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 09:28:24 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/25 00:05:07 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/05/09 09:36:53 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
-size_t	ft_strlen(const char *s)
+int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
 		i++;
+	}
 	return (i);
 }

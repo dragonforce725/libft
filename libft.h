@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 16:50:49 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/31 08:07:58 by mhenriqu         ###   ########.fr       */
+/*   Created: 2022/06/15 11:28:17 by mhenriqu          #+#    #+#             */
+/*   Updated: 2022/06/15 11:28:57 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
+#define BUFF_SIZE 100
 
-size_t  ft_strlen(const char *s);
+int	ft_strlen(char *str);
 size_t	ft_strlcat(char *dest, const char*src, size_t size);
 int	ft_isdigit(int a);
-int	ft_isalpha(int c);
+int	ft_isalpha(int a);
 int	ft_isalnum(int a);
 char	*ft_strchr(const char *str, int a);
 int	ft_strncmp(const char *str1, const char *str2, size_t n);
@@ -35,22 +36,11 @@ int ft_toupper(int a);
 int ft_tolower(int a);
 char    *ft_strchr(const char *str, int a);
 char    *ft_strrchr(const char *str, int a);
-
+int	ft_atoi(const char *str);
 void	*ft_memset(void *str, int a, size_t n);
 void	ft_bzero(void *s, size_t n);
 int ft_memcmp(const void *str1, const void *str2, size_t n);
-void    *ft_memchr(const void *str, int c, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-int	ft_atoi(const char *str);
-char	*ft_strnstr(const char *str1, const char *str2, size_t n);
-void	*ft_memmove(void *str1, const void *str2, size_t n);
-void	*ft_calloc(size_t count, size_t size);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-char	*ft_strdup(const char *s1);
-void    ft_putendl_fd(char *s, int fd);
-char    *ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_itoa(int n);
+void    *memchr(const void *str, int c, size_t n);
+void ft_putchar_fd(char c, int fd);
 
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 06:22:18 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/25 06:25:56 by mhenriqu         ###   ########.fr       */
+/*   Created: 2022/06/15 11:25:10 by mhenriqu          #+#    #+#             */
+/*   Updated: 2022/06/15 11:31:55 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
+	int i;
 
 	i = 0;
 	if (!s)
 		return ;
-	write(fd, s, ft_strlen(s));
+	while(s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }

@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 06:19:09 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/31 08:02:53 by mhenriqu         ###   ########.fr       */
+/*   Created: 2022/06/15 11:26:11 by mhenriqu          #+#    #+#             */
+/*   Updated: 2022/06/15 11:28:04 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_puchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (fd < 0)
-		return ;
 	write(fd, &c, 1);
 }

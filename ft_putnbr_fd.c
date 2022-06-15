@@ -5,29 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 06:27:10 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/31 06:27:31 by mhenriqu         ###   ########.fr       */
+/*   Created: 2022/06/15 11:33:20 by mhenriqu          #+#    #+#             */
+/*   Updated: 2022/06/15 11:41:54 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	str;
-
 	if (n == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
 	}
-	if (n < 0)
+	else if (n < 0)
 	{
-		write(fd, "-", 1);
-		n = -n;
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd(-n, fd);
 	}
-	if (n >= 10)
+	else if (n < 10)
+		ft_putchar_fd(n + '0', fd);
+	else
+	{
 		ft_putnbr_fd(n / 10, fd);
-	str = n % 10 + '\0';
-	write(fd, &str, 1);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }
