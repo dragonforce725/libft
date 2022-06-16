@@ -6,7 +6,7 @@
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:24:25 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/12 16:53:50 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/05/25 01:58:49 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,8 @@
 
 int	ft_isalnum(int a)
 {
-	if (a == ft_isalpha)
-	{
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')
+		|| (a >= '0' && a <= '9'))
 		return (1);
-	}
-	if (a == ft_isdigit)
-	{
-		return (0);
-	}
+	return (0);
 }
