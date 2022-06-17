@@ -37,6 +37,12 @@ SRCS	=  ft_isalnum.c\
 		ft_putnbr_fd.c\
 		ft_putchar_fd.c\
 		ft_strtrim.c\
+		ft_substr.c\
+		ft_strjoin.c\
+		ft_itoa.c\
+		ft_strmapi.c\
+		ft_striteri.c\
+		ft_putendl_fd.c
 
 FLAGS   = -Wall -Wextra -Werror 
 
@@ -56,6 +62,6 @@ clean:
 	rm -rf $(OBJ)
 
 fclean:	clean
-	rm -f $(name)
+	rm -rf $(name)
 
 re: fclean all

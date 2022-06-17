@@ -14,16 +14,11 @@
 
 void    ft_putendl_fd(char *s, int fd)
 {
-    if (s != '\0')
+    char    str;
+    if (str != '\0')
     {
-        ft_putstr_fd (s, fd);
+        ft_putstr_fd (str, fd);
         ft_putchar_fd ('\n', fd);
     }
 }
 
-int main()
-{
-    char *str = 0;
-    ft_putendl_fd(str, 4);
-    return 0;
-}
