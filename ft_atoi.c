@@ -6,7 +6,7 @@
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 17:16:32 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/05/17 19:48:09 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/06/18 08:11:13 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 int	ft_atoi(const char *str)
 {
-	long	i;
-	long	n;
-	int		isneg;
-	int		a;
+	long			i;
+	long			n;
+	unsigned int	is;
 
 	i = 0;
-	n = 0;
-	isneg = 0;
-	a = (str[i] == '\n' || str[i] == '\r');
-	while (str[i] != '\0' && (str[i] == '\t' || str[i] == '\b' || a
-			|| str[i] == '\f' || str[i] == '\v'
-			|| str[i] == 32))
-			i++;
-	if (str[i] != '\0' && str[i] == '-')
+	n = 1;
+	is = 0;
+	while (str[is] != ' ' && (str[is] == '\t' || str[is] == '\n'
+			|| str[is] == '\r' || str[is] == '\f' || str[is] == '\v'))
+			is++;
+	if (str[is] == '-' || str[is] == '+')
 	{
-		isneg = 1;
-		i++;
+		if (str[is] == '-')
+			n = -1;
+		is++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0' && ft_isdigit(str[i]))
-			n = (n * 10) + (str[i++] - '0');
-	if (isneg == 1)
-		return (-n);
-	return (n);
+	while (str[is] >= '0' && str[is] <= '9')
+	{
+		i = i * 10 + str[is] - '0';
+		is++;
+	}
+	return ((int) i * n);
 }

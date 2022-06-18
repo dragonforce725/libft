@@ -6,19 +6,16 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 19:29:27 by marvin            #+#    #+#             */
-/*   Updated: 2022/05/28 19:29:27 by marvin           ###   ########.fr       */
+/*   Updated: 2022/06/18 04:26:34 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-    char    str;
-    if (str != '\0')
-    {
-        ft_putstr_fd (str, fd);
-        ft_putchar_fd ('\n', fd);
-    }
+	if (!s || !fd)
+		return ;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
-

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 19:07:40 by mhenriqu          #+#    #+#              #
-#    Updated: 2022/06/15 15:25:04 by marvin           ###   ########.fr        #
+#    Updated: 2022/06/18 11:52:03 by mhenriqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ SRCS	=  ft_isalnum.c\
 		ft_itoa.c\
 		ft_strmapi.c\
 		ft_striteri.c\
-		ft_putendl_fd.c
+		ft_putendl_fd.c\
+		ft_split.c
 
 FLAGS   = -Wall -Wextra -Werror 
 
@@ -54,7 +55,6 @@ OBJ = $(SRCS:.c=.o)
 
 $(NAME):	$(OBJ)
 	@ar r $(NAME) $(OBJ)
-	@echo "feito !"
 
 all:	$(NAME)
 
@@ -65,3 +65,5 @@ fclean:	clean
 	rm -rf $(name)
 
 re: fclean all
+
+.PHONY:	all clean fclean re
