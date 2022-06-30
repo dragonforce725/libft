@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:50:49 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/06/17 22:05:08 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:17:37 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,9 @@ int	    ft_strncmp(const char *str1, const char *str2, size_t n);
 int	    ft_isascii(int a);
 int     ft_isprint(int a);
 size_t  ft_strlcpy(char *dest, const char *src, size_t size);
-size_t  ft_strlcat(char *dest, const char *src, size_t size);
 int     ft_toupper(int a);
 int     ft_tolower(int a);
-char    *ft_strchr(const char *str, int a);
 char    *ft_strrchr(const char *str, int a);
-
 void	*ft_memset(void *str, int a, size_t n);
 void	ft_bzero(void *s, size_t n);
 int     ft_memcmp(const void *str1, const void *str2, size_t n);

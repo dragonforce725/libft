@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 19:07:40 by mhenriqu          #+#    #+#              #
-#    Updated: 2022/06/18 11:52:03 by mhenriqu         ###   ########.fr        #
+#    Updated: 2022/06/30 20:10:24 by mhenriqu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,15 +54,15 @@ NAME	= libft.a
 OBJ = $(SRCS:.c=.o)
 
 $(NAME):	$(OBJ)
-	@ar r $(NAME) $(OBJ)
+	@ar -rcs $(NAME) $(OBJ)
 
 all:	$(NAME)
 
 clean:
-	rm -rf $(OBJ)
+	rm -f $(OBJ)
 
 fclean:	clean
-	rm -rf $(name)
+	rm -f $(NAME)
 
 re: fclean all
 
