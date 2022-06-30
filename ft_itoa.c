@@ -12,52 +12,44 @@
 
 #include "libft.h"
 
-static int	size(int i)
+size_t static		size(int i)
 {
-	int	size;
+	int len;
 
-	if (i == 0)
-		return (2);
-	size = 1;
-	if (i < 0)
+	len = 0;
+	if (i <= 0)
+		len++;
+	while (i)
 	{
-		i /= 10;
-		size += 2;
-		i = -1;
+		len++;
+		i = i / 10;
 	}
-	while (i > 0)
-	{
-		i /= 10;
-		size++;
-	}
-	return (size);
+	return (len);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
-	char	*str;
 	int		len;
-	int		sign;
+	char	*str;
+	long	nb;
 
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
 	len = size(n);
-	sign = 0;
-	if (n < 0)
-	{
-		sign = 1;
-		n = -n;
-	}
-	str = (char *) malloc (len);
-	if (str == NULL)
+	nb = n;
+	if (!(str = malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	str[--len] = '\0';
-	while (--len >= sign)
+	if (nb < 0)
 	{
-		str[len] = n % 10 + '0';
-		n /= 10;
-	}
-	if (sign)
 		str[0] = '-';
+		nb = -nb;
+	}
+	if (nb == 0)
+		str[0] = '0';
+	str[len--] = '\0';
+	while (nb)
+	{
+		str[len] = nb % 10 + '0';
+		len--;
+		nb = nb / 10;
+	}
 	return (str);
 }
