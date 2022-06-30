@@ -45,7 +45,6 @@ static char	*w_len(const char *str, int init, int and)
 	big[i] = '\0';
 	return (big);
 }
-
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
@@ -53,13 +52,15 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	int		start;
 
-	tab = (malloc((num_word(s, c) + 1) * sizeof(char *)));
-	if (!s || !tab)
+	if(!s)
 		return (NULL);
-	i = 0;
+		tab = (malloc((num_word(s, c) + 1) * sizeof(char *)));
+	if (!tab)
+		return (NULL);
+	i = -1;
 	j = 0;
 	start = 0;
-	while (i < ft_strlen(s))
+	while (++i < ft_strlen(s))
 	{
 		while (s[i] == c)
 			i++;
@@ -68,7 +69,6 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (start != i)
 		tab[j++] = w_len(s, start, i);
-	i++;
 	}
 	tab[j] = NULL;
 	return (tab);
