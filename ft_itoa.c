@@ -6,15 +6,15 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:43:14 by marvin            #+#    #+#             */
-/*   Updated: 2022/06/18 01:00:35 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:41:11 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t static		size(int i)
+size_t static	size(int i)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (i <= 0)
@@ -27,7 +27,7 @@ size_t static		size(int i)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
@@ -35,7 +35,8 @@ char		*ft_itoa(int n)
 
 	len = size(n);
 	nb = n;
-	if (!(str = malloc(sizeof(char) * len + 1)))
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
 	if (nb < 0)
 	{

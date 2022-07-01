@@ -6,7 +6,7 @@
 /*   By: mhenriqu <marcos.henrique.com.br725@gmail  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 21:12:37 by mhenriqu          #+#    #+#             */
-/*   Updated: 2022/06/18 11:45:10 by mhenriqu         ###   ########.fr       */
+/*   Updated: 2022/07/01 00:18:36 by mhenriqu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ static char	*w_len(const char *str, int init, int and)
 	big[i] = '\0';
 	return (big);
 }
+
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;
 	size_t	i;
 	size_t	j;
-	int		start;
+	size_t	start;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 		tab = (malloc((num_word(s, c) + 1) * sizeof(char *)));
 	if (!tab)
